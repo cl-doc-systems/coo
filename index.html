@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>example</title>
+<meta name="Author" content="Alexander Artemenko" />
+</head>
+<body>
+<div id="example" class="document"><h1 class="title">example</h1>
+<table class="docinfo" frame="void" rules="none"><col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author</th><td>Alexander Artemenko</td></tr><tr class="field"><th colspan="1" class="docinfo-name">license:</th><td class="field-body">Unlicense</td>
+</tr>
+</tbody>
+</table>
+<div id="example-of-coo-documentation-for-a-common-lisp-library" class="section"><h2><a name="example-of-coo-documentation-for-a-common-lisp-library">Example of Coo documentation for a Common Lisp library</a></h2>
+<p>This is a small library includes a few functions with docstrings and a documentation for the system and all included packages.</p>
+<p>The purpose is to demonstrate core features of the <a class="reference" href="https://github.com/fisxoj/coo"><span>coo</span></a> library.</p>
+<p>The repository can be used as a template for new libraries if you've choosen <tt class="docutils literal">
+<span class="pre">Coo</span></tt> for documenting your library.</p>
+<p>Let's review features, provided by <tt class="docutils literal">
+<span class="pre">Coo</span></tt>.</p>
+</div>
+<div id="pros-cons-of-coo" class="section"><h2><a name="pros-cons-of-coo">Pros &amp; Cons of Coo</a></h2>
+<div class="note admonition-note">
+Because of some bug in <tt class="docutils literal">
+<span class="pre">cl-docutils</span></tt>, I have to decorate this header above as a document's title :(</div>
+<div id="pros" class="section"><h3><a name="pros">Pros</a></h3>
+<ul>
+<li><p class="first last">reStructured text format has flexible abstraction to extend its functionality. You can add new "roles" to support different types of documentation blocks.</p>
+</li>
+<li><p class="first last">reStructured text is widely used. It is like markdown, but is more suitable for writing large interlinked documents.</p>
+</li>
+<li><p class="first last">extensions can be written in Common Lisp.</p>
+</li>
+<li><p class="first last">cross-referencing works almost the same way like with <a class="reference" href="https://cl-doc-systems.github.io/sphinxcontrib-cldomain/"><span>cldomain</span></a>.</p>
+</li>
+<li><p class="first last">it is very easy to install Coo and to build documentation for any Lisp system having the docstrings.</p>
+</li>
+<li><p class="first last">docstrings can be written in <a class="reference" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/"><span>reStructured</span></a> text format and reference other parts of the documentation.</p>
+</li>
+</ul>
+</div>
+<div id="cons" class="section"><h3><a name="cons">Cons</a></h3>
+<ul>
+<li><p class="first last">reStructured implementation is incomplete and has bugs. For example, <tt class="docutils literal">
+<span class="pre">include</span></tt> tag duplicates preceding lines. Roles <tt class="docutils literal">
+<span class="pre">toctree</span></tt> and <tt class="docutils literal">
+<span class="pre">code-block</span></tt> aren't supported.</p>
+</li>
+<li><p class="first last">Syntax is more complex than Markdown and requires some time to get familiar with.</p>
+</li>
+<li><p class="first last">Syntax relies on indentation and sometimes it leads to the problems.</p>
+</li>
+<li><p class="first last">It is hard to debug error messages from <tt class="docutils literal">
+<span class="pre">cl-docutils</span></tt>. But the Coo's author is <a class="reference" href="https://github.com/fisxoj/coo/issues/19"><span>thinking about the alternatives</span></a>. For example, cl-docutils' header level processing is very buggy which makes hard to write large docs like this one. It frequently signals the <tt class="docutils literal">
+<span class="pre">Title</span> <span class="pre">Level</span> <span class="pre">Inconsistent</span></tt> error.</p>
+</li>
+<li><p class="first last">You can fully control documentation layout. It is always file with system's description which includes one or more files for each system's packages.</p>
+</li>
+<li><p class="first last">It inconvenient to write large blocks of code as docstring and you have to read them from files at compile-time.</p>
+</li>
+<li><p class="first last">HTML themes aren't supported <a class="reference" href="https://github.com/fisxoj/coo/issues/14"><span>yet</span></a>.</p>
+</li>
+</ul>
+<div id="how-to-build-the-documentation" class="section"><h4><a name="how-to-build-the-documentation">How to build the documentation</a></h4>
+<p>Comparing to <a class="reference" href="https://cl-doc-systems.github.io/sphinxcontrib-cldomain/"><span>cldomain</span></a>, Coo usage is much more easier for a Common Lisper.</p>
+<p>You just install it from Ultralisp.org and run from the REPL like that:</p>
+<pre class="literal-block">
+(coo:document-system "example"
+                     :base-path #P"docs/build/")
+
+</pre></div>
+<div id="handwritten-documentation" class="section"><h4><a name="handwritten-documentation">Handwritten documentation</a></h4>
+<p>I think the ability to write a large pieces of documentation which aren't bound to a function, class or module is an important feature. This way you can tell the user about some toplevel abstractions and give a bird eye view on the library or system.</p>
+<p>For example, handwritten parts of the documentation can provide some code snippets to demonstrate the ways, how to use the library:</p>
+<pre class="literal-block">
+(loop repeat 42
+      collect (foo "bar" 100500))
+</pre><p>And when you are talking about some function or class, you can reference it. For example, if I'm talking about <tt class="docutils literal">
+<span class="pre">foo</span></tt> function, I can reference it like this <tt class="docutils literal">
+<span class="pre">:function:`example/app:foo`</span></tt> and it will appear in the code as the link <a class="reference ref-function" href="example/app.html#function-foo"><span class="ref-function">example/app:foo</span></a>.</p>
+</div>
+<div id="extending-coo" class="section"><h4><a name="extending-coo">Extending Coo</a></h4>
+<p>Coo can be extended with new roles and directives using <a class="reference ref-macro" href="docutils.parser.rst.html#macro-def-role"><span class="ref-macro">docutils.parser.rst:def-role</span></a> and <a class="reference ref-macro" href="docutils.parser.rst.html#macro-def-directive"><span class="ref-macro">docutils.parser.rst:def-directive</span></a>.</p>
+<p>For example there here is a role to eval any lisp code and insert the result into the text:</p>
+<pre class="literal-block">
+(def-role eval(text)
+  (handler-case
+      (with-input-from-string(is text)
+        (let ((*package* (find-package :common-lisp-user)))
+          (let ((arg1 (read is t nil))
+                (arg2 (read is nil nil)))
+            (make-instance
+             'docutils.nodes:inline-evaluation
+             :expression (or arg2 arg1)
+             :format (when arg2 arg1)))))
+    (error(e)
+      (make-node 'problematic
+                 (write-to-string e :escape nil :readably nil )))))
+</pre><p>To use it in the code, run:</p>
+<ul>
+<li><p class="first last"><tt class="docutils literal">
+<span class="pre">:eval:`(package-name</span> <span class="pre">*package*)`</span></tt> ➞ "SCRIPT.BUILD-DOCS"</p>
+</li>
+<li><p class="first last"><tt class="docutils literal">
+<span class="pre">:eval:`(format</span> <span class="pre">nil</span> <span class="pre">"&nbsp;A</span> <span class="pre">&nbsp;A"</span> <span class="pre">(lisp-implementation-type)</span> <span class="pre">(lisp-implementation-version))`</span></tt> ➞ "SBCL 2.0.11"</p>
+</li>
+</ul>
+<p>However, in <a class="reference" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/"><span>reStructured</span></a> format role is an inline entity. If you want to define a custom multiline block, then use <a class="reference ref-macro" href="docutils.parser.rst.html#macro-def-directive"><span class="ref-macro">docutils.parser.rst:def-directive</span></a>.</p>
+<p>cl-docutils includes a directive:</p>
+<pre class="literal-block">
+(def-directive evaluation
+    (parent language
+            &amp;option
+            (format symbol nil)
+            (package symbol nil)
+            &amp;content content)
+  (let ((language (intern (string-upcase language) :keyword)))
+    (if content
+        (let ((content
+               (with-output-to-string(os)
+                 (loop :for line :across content
+                    :do (write-line line os)))))
+          (add-child
+           parent
+           (make-instance
+            'docutils.nodes:block-evaluation
+            :format (or format (setting :default-evaluation-format parent))
+            :expression (ecase language
+                          (:lisp (let ((*package*
+                                        (or (and package (find-package package))
+                                            *package*)))
+                                   (read-from-string content)))))))
+      (report :error "Evaluation directive is empty; content required."))))
+
+</pre><p>Here is an example of calling such block and interpreting the returned result as an HTML fragment:</p>
+<pre class="literal-block">
+.. evaluation:: lisp
+   :format: HTML
+
+   (format nil "&lt;b&gt;&nbsp;A&lt;/b&gt; &nbsp;A:&nbsp;%&nbsp;%&lt;pre&gt;&nbsp;A&lt;/pre&gt;"
+     (lisp-implementation-type)
+     (lisp-implementation-version)
+     (with-output-to-string (*standard-output*)
+       (room nil)))
+</pre><p>Result:</p>
+<b>SBCL</b> 2.0.11:
+
+<pre>Dynamic space usage is:   111,269,232 bytes.
+Immobile space usage is:   20,708,304 bytes (71,104 bytes overhead).
+Read-only space usage is:           0 bytes.
+Static space usage is:            736 bytes.
+Control stack usage is:         8,720 bytes.
+Binding stack usage is:         1,056 bytes.
+Control and binding stack usage is for the current thread only.
+Garbage collection is currently enabled.
+</pre><p>This is a very cool feature, because this way you can create a custom blocks for your documentation.</p>
+<p>For example, I always wanted to be able to show <a class="reference" href="http://40ants.com/weblocks/"><span>Weblocks</span></a> widgets examples along with their rendered pictures. With Coo it is possible to create a directive, which will run the example's code, make a screeshot and save it into the static folder!</p>
+</div>
+<div id="autogenerated-api" class="section"><h4><a name="autogenerated-api">Autogenerated API</a></h4>
+<p><tt class="docutils literal">
+<span class="pre">Coo</span></tt> provides a completely automated generation of the API reference.</p>
+<p>At the end of the page with the system's documentation it includes links to all packages, provided by the system.</p>
+<div id="packages" class="section"><h5><a name="packages">Packages</a></h5>
+<ul>
+<li><p class="first last"><a class="reference" href="example/utils.html"><span>example/utils</span></a></p>
+</li>
+<li><p class="first last"><a class="reference" href="example/app.html"><span>example/app</span></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Mon, 25 Jan 2021 10:54:48 .
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>docutils.parser
+
+ package</title>
+</head>
+<body>
+<div id="docutils-parser-package" class="document"><h1 class="title"><tt class="docutils literal">
+<span class="pre">docutils.parser</span></tt> package</h1>
+<p><a class="reference" href="index.html"><span>&lt;&lt; back to docutils index</span></a></p>
+<p>Library for docutils parsers</p>
+<p>Exported symbols:</p>
+<div id="variables" class="section"><h2><a name="variables">Variables</a></h2>
+<a id="variable-2bwsp-transitions-2b" class="target" name="variable-2bwsp-transitions-2b"></a><div id="wsp-transitions" class="section"><h3><a name="wsp-transitions"><tt class="docutils literal">
+<span class="pre">+wsp-transitions+</span></tt></a></h3>
+<p>Transitons for a wsp state machine</p>
+</div>
+</div>
+<div id="functions" class="section"><h2><a name="functions">Functions</a></h2>
+<a id="function-state-correction" class="target" name="function-state-correction"></a><div id="state-correction" class="section"><h3><a name="state-correction"><tt class="docutils literal">
+<span class="pre">state-correction</span></tt></a></h3>
+<a id="function-matches" class="target" name="function-matches"></a></div>
+<div id="matches" class="section"><h3><a name="matches"><tt class="docutils literal">
+<span class="pre">matches</span></tt></a></h3>
+<a id="function-match" class="target" name="function-match"></a></div>
+<div id="match" class="section"><h3><a name="match"><tt class="docutils literal">
+<span class="pre">match</span></tt></a></h3>
+<a id="function-match-group-length" class="target" name="function-match-group-length"></a></div>
+<div id="match-group-length" class="section"><h3><a name="match-group-length"><tt class="docutils literal">
+<span class="pre">match-group-length</span></tt></a></h3>
+<p>Return length of the subsequence corresponding to match group n of match</p>
+<a id="function-match-group" class="target" name="function-match-group"></a></div>
+<div id="match-group" class="section"><h3><a name="match-group"><tt class="docutils literal">
+<span class="pre">match-group</span></tt></a></h3>
+<p>Return a new subsequence corresponding to match group n of match. If n is not specified returns entire match</p>
+<a id="function-known-first-indent" class="target" name="function-known-first-indent"></a></div>
+<div id="known-first-indent" class="section"><h3><a name="known-first-indent"><tt class="docutils literal">
+<span class="pre">known-first-indent</span></tt></a></h3>
+<p>Handle a known-indent text block (first line's indent known). Extend or override in subclasses.  Recursively run the state machine for indented blocks</p>
+<a id="function-known-indent" class="target" name="function-known-indent"></a></div>
+<div id="known-indent" class="section"><h3><a name="known-indent"><tt class="docutils literal">
+<span class="pre">known-indent</span></tt></a></h3>
+<p>Handle a known-indent text block. Extend or override in subclasses. Recursively run the state machine for indented blocks</p>
+<a id="function-get-indented" class="target" name="function-get-indented"></a></div>
+<div id="get-indented" class="section"><h3><a name="get-indented"><tt class="docutils literal">
+<span class="pre">get-indented</span></tt></a></h3>
+<p>Return an indented block and info.</p>
+<blockquote> <blockquote> Extract an indented block where the indent is known for all lines. Starting with the current line, extract the entire text block with at least <cite><span>indent</span></cite> indentation (which must be whitespace, except for the first line).</blockquote> <table class="field-list" frame="void" rules="none"><col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th colspan="1" class="field-name">Parameters:</th><td class="field-body"><ul class="first last">
+<li><dl class="docutils first last"><dt><cite><span>block-indent</span></cite>: The number of indent columns/characters if the</dt>
+<dd><p class="first last">indent is known for all lines.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="docutils first last"><dt>first-indent: The indent  where the indent is known for the first line</dt>
+<dd><p class="first last">and unknown for all other lines.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first last"><cite><span>until_blank</span></cite>: Stop collecting at the first blank line if true (1).</p>
+</li>
+<li><p class="first last"><cite><span>strip_indent</span></cite>: Strip <cite><span>indent</span></cite> characters of indentation if true (1, default).</p>
+</li>
+<li><p class="first last"><cite><span>strip_top</span></cite>: Strip blank lines from the beginning of the block.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th colspan="1" class="field-name">Return:</th><td class="field-body"><ul class="first last">
+<li><p class="first last">the indented block,</p>
+</li>
+<li><p class="first last">its first line offset from BOF, and</p>
+</li>
+<li><p class="first last">whether or not it finished with a blank line.</p>
+</li>
+<li><p class="first last">then indent,</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</blockquote> <a id="function-remove-transition" class="target" name="function-remove-transition"></a></div>
+<div id="remove-transition" class="section"><h3><a name="remove-transition"><tt class="docutils literal">
+<span class="pre">remove-transition</span></tt></a></h3>
+<p>Remove a transition by <cite><span>name</span></cite></p>
+<a id="function-add-transitions" class="target" name="function-add-transitions"></a></div>
+<div id="add-transitions" class="section"><h3><a name="add-transitions"><tt class="docutils literal">
+<span class="pre">add-transitions</span></tt></a></h3>
+<p>Add a list of transitions to the start of the transition list.</p>
+<a id="function-transition-match" class="target" name="function-transition-match"></a></div>
+<div id="transition-match" class="section"><h3><a name="transition-match"><tt class="docutils literal">
+<span class="pre">transition-match</span></tt></a></h3>
+<a id="function-transition-name" class="target" name="function-transition-name"></a></div>
+<div id="transition-name" class="section"><h3><a name="transition-name"><tt class="docutils literal">
+<span class="pre">transition-name</span></tt></a></h3>
+<a id="function-add-states" class="target" name="function-add-states"></a></div>
+<div id="add-states" class="section"><h3><a name="add-states"><tt class="docutils literal">
+<span class="pre">add-states</span></tt></a></h3>
+<p>register state classes with this state engine</p>
+<a id="function-get-text-block" class="target" name="function-get-text-block"></a></div>
+<div id="get-text-block" class="section"><h3><a name="get-text-block"><tt class="docutils literal">
+<span class="pre">get-text-block</span></tt></a></h3>
+<p>Return a contiguous block of text.</p>
+<p>If <cite><span>flush_left</span></cite> is true, signal <cite><span>UnexpectedIndentationError</span></cite> if an indented line is encountered before the text block ends (with a blank line).</p>
+<a id="function-abs-line-number" class="target" name="function-abs-line-number"></a></div>
+<div id="abs-line-number" class="section"><h3><a name="abs-line-number"><tt class="docutils literal">
+<span class="pre">abs-line-number</span></tt></a></h3>
+<a id="function-abs-line-offset" class="target" name="function-abs-line-offset"></a></div>
+<div id="abs-line-offset" class="section"><h3><a name="abs-line-offset"><tt class="docutils literal">
+<span class="pre">abs-line-offset</span></tt></a></h3>
+<p>Return Return line offset of current line, from beginning of file.</p>
+<a id="function-goto-line" class="target" name="function-goto-line"></a></div>
+<div id="goto-line" class="section"><h3><a name="goto-line"><tt class="docutils literal">
+<span class="pre">goto-line</span></tt></a></h3>
+<p>Jump to absolute line offset abs-line-offset, load and return it.</p>
+<a id="function-previous-line" class="target" name="function-previous-line"></a></div>
+<div id="previous-line" class="section"><h3><a name="previous-line"><tt class="docutils literal">
+<span class="pre">previous-line</span></tt></a></h3>
+<a id="function-next-line-blank-p" class="target" name="function-next-line-blank-p"></a></div>
+<div id="next-line-blank-p" class="section"><h3><a name="next-line-blank-p"><tt class="docutils literal">
+<span class="pre">next-line-blank-p</span></tt></a></h3>
+<p>TRUE if the next line is blank or non-existant.</p>
+<a id="function-next-line" class="target" name="function-next-line"></a></div>
+<div id="next-line" class="section"><h3><a name="next-line"><tt class="docutils literal">
+<span class="pre">next-line</span></tt></a></h3>
+<a id="function-current-line" class="target" name="function-current-line"></a></div>
+<div id="current-line" class="section"><h3><a name="current-line"><tt class="docutils literal">
+<span class="pre">current-line</span></tt></a></h3>
+</div>
+</div>
+<div id="generic-functions" class="section"><h2><a name="generic-functions">Generic Functions</a></h2>
+<a id="generic-function-indent" class="target" name="generic-function-indent"></a><div id="indent" class="section"><h3><a name="indent"><tt class="docutils literal">
+<span class="pre">indent</span></tt></a></h3>
+<p>Handle an indented text block. Extend or override in subclasses.  Recursively run the state machine for indented blocks</p>
+<a id="generic-function-blank" class="target" name="generic-function-blank"></a></div>
+<div id="blank" class="section"><h3><a name="blank"><tt class="docutils literal">
+<span class="pre">blank</span></tt></a></h3>
+<p>Handle blank lines.</p>
+<a id="generic-function-nop" class="target" name="generic-function-nop"></a></div>
+<div id="nop" class="section"><h3><a name="nop"><tt class="docutils literal">
+<span class="pre">nop</span></tt></a></h3>
+<p>A do nothing transition method.</p>
+<a id="generic-function-eof" class="target" name="generic-function-eof"></a></div>
+<div id="eof" class="section"><h3><a name="eof"><tt class="docutils literal">
+<span class="pre">eof</span></tt></a></h3>
+<p>End of file transition</p>
+<a id="generic-function-bof" class="target" name="generic-function-bof"></a></div>
+<div id="bof" class="section"><h3><a name="bof"><tt class="docutils literal">
+<span class="pre">bof</span></tt></a></h3>
+<p>Beginning of file transition</p>
+<a id="generic-function-no-match" class="target" name="generic-function-no-match"></a></div>
+<div id="no-match" class="section"><h3><a name="no-match"><tt class="docutils literal">
+<span class="pre">no-match</span></tt></a></h3>
+<p>Called when there is no match from <cite><span>StateMachine.check_line()</span></cite>.</p>
+<a id="generic-function-apply-transition" class="target" name="generic-function-apply-transition"></a></div>
+<div id="apply-transition" class="section"><h3><a name="apply-transition"><tt class="docutils literal">
+<span class="pre">apply-transition</span></tt></a></h3>
+<p>Execute transition from state with match</p>
+<a id="generic-function-state-machine-run" class="target" name="generic-function-state-machine-run"></a></div>
+<div id="state-machine-run" class="section"><h3><a name="state-machine-run"><tt class="docutils literal">
+<span class="pre">state-machine-run</span></tt></a></h3>
+<p>Run state machine over input lines filling in document</p>
+</div>
+</div>
+<div id="structures" class="section"><h2><a name="structures">Structures</a></h2>
+<a id="struct-match" class="target" name="struct-match"></a><div id="id1" class="section"><h3><a name="id1"><tt class="docutils literal">
+<span class="pre">match</span></tt></a></h3>
+<p>Results of a transition match</p>
+</div>
+</div>
+<div id="classes" class="section"><h2><a name="classes">Classes</a></h2>
+<a id="class-wsp-state" class="target" name="class-wsp-state"></a><div id="wsp-state" class="section"><h3><a name="wsp-state"><tt class="docutils literal">
+<span class="pre">wsp-state</span></tt></a></h3>
+<p>State superclass specialized for whitespace (blank lines &amp; indents).</p>
+<p>Use this class with <cite><span>StateMachineWS</span></cite>.  The transitions 'blank' (for blank lines) and 'indent' (for indented text blocks) are added automatically, before any other transitions.  The transition method <cite><span>blank()</span></cite> handles blank lines and <cite><span>indent()</span></cite> handles nested indented blocks.  Indented blocks trigger a new state machine to be created by <cite><span>indent()</span></cite> and run. The class of the state machine to be created is in <cite><span>indent_sm</span></cite>, and the constructor keyword arguments are in the dictionary <cite><span>indent_sm_kwargs</span></cite>.</p>
+<a id="class-wsp-state-machine" class="target" name="class-wsp-state-machine"></a></div>
+<div id="wsp-state-machine" class="section"><h3><a name="wsp-state-machine"><tt class="docutils literal">
+<span class="pre">wsp-state-machine</span></tt></a></h3>
+<p>state-machine subclass specialized for whitespace recognition</p>
+<a id="class-state" class="target" name="class-state"></a></div>
+<div id="state" class="section"><h3><a name="state"><tt class="docutils literal">
+<span class="pre">state</span></tt></a></h3>
+<p>State superclass.</p>
+<a id="class-state-machine" class="target" name="class-state-machine"></a></div>
+<div id="state-machine" class="section"><h3><a name="state-machine"><tt class="docutils literal">
+<span class="pre">state-machine</span></tt></a></h3>
+<p>A finite state machine for text filters using matching functions</p>
+<p>	The input is provided in the form of a list of one-line strings (no 	newlines) which may be modified. States are subclasses of the <cite><span>State</span></cite> 	class. Transitions consist of regular expression patterns and 	transition methods, and are defined in each state.</p>
+<p>	The state machine is started with the <cite><span>run()</span></cite> method, which returns the 	results of processing in a list.</p>
+<a id="condition-insert-lines" class="target" name="condition-insert-lines"></a></div>
+<div id="insert-lines" class="section"><h3><a name="insert-lines"><tt class="docutils literal">
+<span class="pre">insert-lines</span></tt></a></h3>
+<a id="condition-unexpected-indentation" class="target" name="condition-unexpected-indentation"></a></div>
+<div id="unexpected-indentation" class="section"><h3><a name="unexpected-indentation"><tt class="docutils literal">
+<span class="pre">unexpected-indentation</span></tt></a></h3>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Mon, 25 Jan 2021 10:54:48 .
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>docutils
+
+ package</title>
+</head>
+<body>
+<div id="docutils-package" class="document"><h1 class="title"><tt class="docutils literal">
+<span class="pre">docutils</span></tt> package</h1>
+<p><a class="reference" href="index.html"><span>&lt;&lt; back to docutils index</span></a></p>
+<p>Document handling and structured text parsing</p>
+<p>Exported symbols:</p>
+<div id="variables" class="section"><h2><a name="variables">Variables</a></h2>
+<a id="variable-2aunknown-reference-resolvers-2a" class="target" name="variable-2aunknown-reference-resolvers-2a"></a><div id="unknown-reference-resolvers" class="section"><h3><a name="unknown-reference-resolvers"><tt class="docutils literal">
+<span class="pre">*unknown-reference-resolvers*</span></tt></a></h3>
+<dl class="docutils"><dt>List of functions to try to resolve unknown references.  Unknown</dt>
+<dd><p class="first">references have a 'refname' attribute which doesn't correspond to any target in the document.  Called when FinalCheckVisitor is unable to find a correct target.  The list should contain functions which will try to resolve unknown references, with the following signature:</p>
+<pre class="literal-block last">
+(defun reference_resolver(node)
+   "Returns boolean: true if resolved, false if not."
+  )
+
+</pre></dd>
+</dl>
+<a id="variable-2aevaluation-error-hook-2a" class="target" name="variable-2aevaluation-error-hook-2a"></a></div>
+<div id="evaluation-error-hook" class="section"><h3><a name="evaluation-error-hook"><tt class="docutils literal">
+<span class="pre">*evaluation-error-hook*</span></tt></a></h3>
+<p>Hook to call when there is an error in the evaluator</p>
+<a id="variable-2aevaluator-2a" class="target" name="variable-2aevaluator-2a"></a></div>
+<div id="evaluator" class="section"><h3><a name="evaluator"><tt class="docutils literal">
+<span class="pre">*evaluator*</span></tt></a></h3>
+<p>Function to call when evaluating an evaluateable node</p>
+<a id="variable-2adefault-reader-package-2a" class="target" name="variable-2adefault-reader-package-2a"></a></div>
+<div id="default-reader-package" class="section"><h3><a name="default-reader-package"><tt class="docutils literal">
+<span class="pre">*default-reader-package*</span></tt></a></h3>
+<p>The default package Lisp expressions in the document are to be read into</p>
+<a id="variable-2adocument-2a" class="target" name="variable-2adocument-2a"></a></div>
+<div id="document" class="section"><h3><a name="document"><tt class="docutils literal">
+<span class="pre">*document*</span></tt></a></h3>
+<p>Document (root element) currently being operated on</p>
+<a id="variable-2acurrent-line-number-2a" class="target" name="variable-2acurrent-line-number-2a"></a></div>
+<div id="current-line-number" class="section"><h3><a name="current-line-number"><tt class="docutils literal">
+<span class="pre">*current-line-number*</span></tt></a></h3>
+<p>Current line number - used for line in node creation</p>
+</div>
+</div>
+<div id="functions" class="section"><h2><a name="functions">Functions</a></h2>
+<a id="function-write-latex" class="target" name="function-write-latex"></a><div id="write-latex" class="section"><h3><a name="write-latex"><tt class="docutils literal">
+<span class="pre">write-latex</span></tt></a></h3>
+<a id="function-write-html" class="target" name="function-write-html"></a></div>
+<div id="write-html" class="section"><h3><a name="write-html"><tt class="docutils literal">
+<span class="pre">write-html</span></tt></a></h3>
+<a id="function-read-rst" class="target" name="function-read-rst"></a></div>
+<div id="read-rst" class="section"><h3><a name="read-rst"><tt class="docutils literal">
+<span class="pre">read-rst</span></tt></a></h3>
+<a id="function-register-settings-spec" class="target" name="function-register-settings-spec"></a></div>
+<div id="register-settings-spec" class="section"><h3><a name="register-settings-spec"><tt class="docutils literal">
+<span class="pre">register-settings-spec</span></tt></a></h3>
+<a id="function-part-prepend" class="target" name="function-part-prepend"></a></div>
+<div id="part-prepend" class="section"><h3><a name="part-prepend"><tt class="docutils literal">
+<span class="pre">part-prepend</span></tt></a></h3>
+<a id="function-part-append" class="target" name="function-part-append"></a></div>
+<div id="part-append" class="section"><h3><a name="part-append"><tt class="docutils literal">
+<span class="pre">part-append</span></tt></a></h3>
+<a id="function-named-node" class="target" name="function-named-node"></a></div>
+<div id="named-node" class="section"><h3><a name="named-node"><tt class="docutils literal">
+<span class="pre">named-node</span></tt></a></h3>
+<a id="function-nameids" class="target" name="function-nameids"></a></div>
+<div id="nameids" class="section"><h3><a name="nameids"><tt class="docutils literal">
+<span class="pre">nameids</span></tt></a></h3>
+<p>Mapping of names to unique id's.</p>
+<a id="function-ids" class="target" name="function-ids"></a></div>
+<div id="ids" class="section"><h3><a name="ids"><tt class="docutils literal">
+<span class="pre">ids</span></tt></a></h3>
+<p>Return mapping of ids to nodes in element.</p>
+<a id="function-refids" class="target" name="function-refids"></a></div>
+<div id="refids" class="section"><h3><a name="refids"><tt class="docutils literal">
+<span class="pre">refids</span></tt></a></h3>
+<p>Mapping of ids to lists of referencing nodes.</p>
+<a id="function-refnames" class="target" name="function-refnames"></a></div>
+<div id="refnames" class="section"><h3><a name="refnames"><tt class="docutils literal">
+<span class="pre">refnames</span></tt></a></h3>
+<p>Return mapping of names to lists of referencing nodes.</p>
+<a id="function-set-id" class="target" name="function-set-id"></a></div>
+<div id="set-id" class="section"><h3><a name="set-id"><tt class="docutils literal">
+<span class="pre">set-id</span></tt></a></h3>
+<p>This will set and return the id for a node.</p>
+<a id="function-prev-sibling" class="target" name="function-prev-sibling"></a></div>
+<div id="prev-sibling" class="section"><h3><a name="prev-sibling"><tt class="docutils literal">
+<span class="pre">prev-sibling</span></tt></a></h3>
+<a id="function-next-sibling" class="target" name="function-next-sibling"></a></div>
+<div id="next-sibling" class="section"><h3><a name="next-sibling"><tt class="docutils literal">
+<span class="pre">next-sibling</span></tt></a></h3>
+<a id="function-add-backref" class="target" name="function-add-backref"></a></div>
+<div id="add-backref" class="section"><h3><a name="add-backref"><tt class="docutils literal">
+<span class="pre">add-backref</span></tt></a></h3>
+<a id="function-report" class="target" name="function-report"></a></div>
+<div id="report" class="section"><h3><a name="report"><tt class="docutils literal">
+<span class="pre">report</span></tt></a></h3>
+<p>Signals a report. Handlers will check settings to either halt processing or issue a report and return. If a system message has been added by handler, it is returned using the system-message restart</p>
+</div>
+</div>
+<div id="macros" class="section"><h2><a name="macros">Macros</a></h2>
+<a id="macro-with-part" class="target" name="macro-with-part"></a><div id="with-part" class="section"><h3><a name="with-part"><tt class="docutils literal">
+<span class="pre">with-part</span></tt></a></h3>
+<a id="macro-collate-nodes" class="target" name="macro-collate-nodes"></a></div>
+<div id="collate-nodes" class="section"><h3><a name="collate-nodes"><tt class="docutils literal">
+<span class="pre">collate-nodes</span></tt></a></h3>
+<a id="macro-with-attributes" class="target" name="macro-with-attributes"></a></div>
+<div id="with-attributes" class="section"><h3><a name="with-attributes"><tt class="docutils literal">
+<span class="pre">with-attributes</span></tt></a></h3>
+<p>Interate body over the attributes of a node setting key and value in turn. If keyword copy is true, the iteration will be over a list of the attribute list may be modified during iteration, otherwise it may not.</p>
+<a id="macro-with-nodes" class="target" name="macro-with-nodes"></a></div>
+<div id="with-nodes" class="section"><h3><a name="with-nodes"><tt class="docutils literal">
+<span class="pre">with-nodes</span></tt></a></h3>
+<p>Traverse a node tree depth first executing body for side affects. The body is executed then children are traversed (if an element). During execution of the body catch tags are available for :skip-children and :skip-siblings to finish processing children of current node or children of parent node. Execution is inside a nil block. Returns nil</p>
+<a id="macro-with-children" class="target" name="macro-with-children"></a></div>
+<div id="with-children" class="section"><h3><a name="with-children"><tt class="docutils literal">
+<span class="pre">with-children</span></tt></a></h3>
+<p>Exevute body over the children of a node During execution of the body a catch tags is available for :skip-siblings which will terminate the iteration</p>
+<a id="macro-with-reports-to-node" class="target" name="macro-with-reports-to-node"></a></div>
+<div id="with-reports-to-node" class="section"><h3><a name="with-reports-to-node"><tt class="docutils literal">
+<span class="pre">with-reports-to-node</span></tt></a></h3>
+</div>
+</div>
+<div id="generic-functions" class="section"><h2><a name="generic-functions">Generic Functions</a></h2>
+<a id="generic-function-setting" class="target" name="generic-function-setting"></a><div id="setting" class="section"><h3><a name="setting"><tt class="docutils literal">
+<span class="pre">setting</span></tt></a></h3>
+<p>Set a setting value for an entity</p>
+<a id="id1" class="target" name="id1"></a></div>
+<div id="id4" class="section"><h3><a name="id4"><tt class="docutils literal">
+<span class="pre">setting</span></tt></a></h3>
+<p>Return the value of given setting for entity</p>
+<a id="generic-function-visit-node" class="target" name="generic-function-visit-node"></a></div>
+<div id="visit-node" class="section"><h3><a name="visit-node"><tt class="docutils literal">
+<span class="pre">visit-node</span></tt></a></h3>
+<p>Process entity for writer where entity is any entity in the document.</p>
+<a id="generic-function-supports-format" class="target" name="generic-function-supports-format"></a></div>
+<div id="supports-format" class="section"><h3><a name="supports-format"><tt class="docutils literal">
+<span class="pre">supports-format</span></tt></a></h3>
+<p>Returns true if given writer supports a specific format</p>
+<a id="generic-function-transforms" class="target" name="generic-function-transforms"></a></div>
+<div id="transforms" class="section"><h3><a name="transforms"><tt class="docutils literal">
+<span class="pre">transforms</span></tt></a></h3>
+<p>Return a list of the default transforms class names to be applied after parsing</p>
+<a id="generic-function-transform" class="target" name="generic-function-transform"></a></div>
+<div id="transform" class="section"><h3><a name="transform"><tt class="docutils literal">
+<span class="pre">transform</span></tt></a></h3>
+<p>Apply a given transform to its' document node</p>
+<a id="generic-function-write-part" class="target" name="generic-function-write-part"></a></div>
+<div id="write-part" class="section"><h3><a name="write-part"><tt class="docutils literal">
+<span class="pre">write-part</span></tt></a></h3>
+<p>Write a document part from writer to an output stream.</p>
+<a id="generic-function-write-document" class="target" name="generic-function-write-document"></a></div>
+<div id="write-document" class="section"><h3><a name="write-document"><tt class="docutils literal">
+<span class="pre">write-document</span></tt></a></h3>
+<p>Write document out to destination using given writer</p>
+<a id="generic-function-read-document" class="target" name="generic-function-read-document"></a></div>
+<div id="read-document" class="section"><h3><a name="read-document"><tt class="docutils literal">
+<span class="pre">read-document</span></tt></a></h3>
+<p>Create and read a new document using reader from source</p>
+<a id="generic-function-new-document" class="target" name="generic-function-new-document"></a></div>
+<div id="new-document" class="section"><h3><a name="new-document"><tt class="docutils literal">
+<span class="pre">new-document</span></tt></a></h3>
+<p>Create and return a new empty document tree (root node).</p>
+<a id="generic-function-field-value" class="target" name="generic-function-field-value"></a></div>
+<div id="field-value" class="section"><h3><a name="field-value"><tt class="docutils literal">
+<span class="pre">field-value</span></tt></a></h3>
+<p>Return the field text for a specific field name</p>
+<a id="generic-function-substitute-node" class="target" name="generic-function-substitute-node"></a></div>
+<div id="substitute-node" class="section"><h3><a name="substitute-node"><tt class="docutils literal">
+<span class="pre">substitute-node</span></tt></a></h3>
+<p>Substitute new node for and old node in document tree</p>
+<a id="generic-function-add-class" class="target" name="generic-function-add-class"></a></div>
+<div id="add-class" class="section"><h3><a name="add-class"><tt class="docutils literal">
+<span class="pre">add-class</span></tt></a></h3>
+<p>Add class to given node</p>
+<a id="generic-function-evaluate" class="target" name="generic-function-evaluate"></a></div>
+<div id="evaluate" class="section"><h3><a name="evaluate"><tt class="docutils literal">
+<span class="pre">evaluate</span></tt></a></h3>
+<dl class="docutils"><dt>Evaluate the node in current dynamic context,</dt>
+<dd>returning the result.</dd>
+</dl>
+<a id="generic-function-copy-of-node" class="target" name="generic-function-copy-of-node"></a></div>
+<div id="copy-of-node" class="section"><h3><a name="copy-of-node"><tt class="docutils literal">
+<span class="pre">copy-of-node</span></tt></a></h3>
+<p>Deep copy a node</p>
+<a id="generic-function-allowed-child-p" class="target" name="generic-function-allowed-child-p"></a></div>
+<div id="allowed-child-p" class="section"><h3><a name="allowed-child-p"><tt class="docutils literal">
+<span class="pre">allowed-child-p</span></tt></a></h3>
+<p>Return true if node is allowed as a child of parent</p>
+<a id="generic-function-number-children" class="target" name="generic-function-number-children"></a></div>
+<div id="number-children" class="section"><h3><a name="number-children"><tt class="docutils literal">
+<span class="pre">number-children</span></tt></a></h3>
+<p>Reutrn the  number of children a node has</p>
+<a id="generic-function-remove-node" class="target" name="generic-function-remove-node"></a></div>
+<div id="remove-node" class="section"><h3><a name="remove-node"><tt class="docutils literal">
+<span class="pre">remove-node</span></tt></a></h3>
+<p>Remove a node</p>
+<a id="generic-function-rem-child" class="target" name="generic-function-rem-child"></a></div>
+<div id="rem-child" class="section"><h3><a name="rem-child"><tt class="docutils literal">
+<span class="pre">rem-child</span></tt></a></h3>
+<p>Remove a child element from parent</p>
+<a id="generic-function-add-child" class="target" name="generic-function-add-child"></a></div>
+<div id="add-child" class="section"><h3><a name="add-child"><tt class="docutils literal">
+<span class="pre">add-child</span></tt></a></h3>
+<p>Add child as a child node of node, either inserting it at position index or appending it to the end if no index is specified (default)</p>
+<a id="generic-function-index" class="target" name="generic-function-index"></a></div>
+<div id="index" class="section"><h3><a name="index"><tt class="docutils literal">
+<span class="pre">index</span></tt></a></h3>
+<p>Return the posiiton of child in element</p>
+<a id="generic-function-child" class="target" name="generic-function-child"></a></div>
+<div id="child" class="section"><h3><a name="child"><tt class="docutils literal">
+<span class="pre">child</span></tt></a></h3>
+<p>Return a child at position index</p>
+<a id="generic-function-make-node" class="target" name="generic-function-make-node"></a></div>
+<div id="make-node" class="section"><h3><a name="make-node"><tt class="docutils literal">
+<span class="pre">make-node</span></tt></a></h3>
+<p>Make a node with given initialisers</p>
+<a id="generic-function-rem-attribute" class="target" name="generic-function-rem-attribute"></a></div>
+<div id="rem-attribute" class="section"><h3><a name="rem-attribute"><tt class="docutils literal">
+<span class="pre">rem-attribute</span></tt></a></h3>
+<p>Remove an attribute from a node</p>
+<a id="generic-function-attribute" class="target" name="generic-function-attribute"></a></div>
+<div id="attribute" class="section"><h3><a name="attribute"><tt class="docutils literal">
+<span class="pre">attribute</span></tt></a></h3>
+<p>Set a named attribute of an element</p>
+<a id="id2" class="target" name="id2"></a></div>
+<div id="id5" class="section"><h3><a name="id5"><tt class="docutils literal">
+<span class="pre">attribute</span></tt></a></h3>
+<p>Return an attribute of a node corresponding to label</p>
+<a id="generic-function-as-sexp" class="target" name="generic-function-as-sexp"></a></div>
+<div id="as-sexp" class="section"><h3><a name="as-sexp"><tt class="docutils literal">
+<span class="pre">as-sexp</span></tt></a></h3>
+<p>Return lisp s-exp representation of an element</p>
+<a id="generic-function-as-text" class="target" name="generic-function-as-text"></a></div>
+<div id="as-text" class="section"><h3><a name="as-text"><tt class="docutils literal">
+<span class="pre">as-text</span></tt></a></h3>
+<p>Set the text value of a node (if allowed)</p>
+<a id="id3" class="target" name="id3"></a></div>
+<div id="id6" class="section"><h3><a name="id6"><tt class="docutils literal">
+<span class="pre">as-text</span></tt></a></h3>
+<p>Return text representation of an element as a string</p>
+<a id="generic-function-language" class="target" name="generic-function-language"></a></div>
+<div id="language" class="section"><h3><a name="language"><tt class="docutils literal">
+<span class="pre">language</span></tt></a></h3>
+<p>Language for this node</p>
+<a id="generic-function-parent" class="target" name="generic-function-parent"></a></div>
+<div id="parent" class="section"><h3><a name="parent"><tt class="docutils literal">
+<span class="pre">parent</span></tt></a></h3>
+<p>Back-reference to the Node immediately containing this Node.</p>
+<a id="generic-function-error-severity" class="target" name="generic-function-error-severity"></a></div>
+<div id="error-severity" class="section"><h3><a name="error-severity"><tt class="docutils literal">
+<span class="pre">error-severity</span></tt></a></h3>
+<p>Return the error-severity (0-10) for an entity</p>
+</div>
+</div>
+<div id="classes" class="section"><h2><a name="classes">Classes</a></h2>
+<a id="class-writer" class="target" name="class-writer"></a><div id="writer" class="section"><h3><a name="writer"><tt class="docutils literal">
+<span class="pre">writer</span></tt></a></h3>
+<p>Base Class for writing a document</p>
+<a id="class-reader" class="target" name="class-reader"></a></div>
+<div id="reader" class="section"><h3><a name="reader"><tt class="docutils literal">
+<span class="pre">reader</span></tt></a></h3>
+<p>Base classes to produce a document from input</p>
+<a id="class-transform" class="target" name="class-transform"></a></div>
+<div id="id7" class="section"><h3><a name="id7"><tt class="docutils literal">
+<span class="pre">transform</span></tt></a></h3>
+<p>Docutils transform component abstract base class.</p>
+<a id="condition-markup-condition" class="target" name="condition-markup-condition"></a></div>
+<div id="markup-condition" class="section"><h3><a name="markup-condition"><tt class="docutils literal">
+<span class="pre">markup-condition</span></tt></a></h3>
+<p>An condition in the structured text markup. level can be used by handlers to determine whether to ignore, print, record or abort parsing</p>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Mon, 25 Jan 2021 10:54:48 .
+</div>
+</div>
+</body>
+</html>

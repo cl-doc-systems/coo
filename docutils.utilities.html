@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>docutils.utilities
+
+ package</title>
+</head>
+<body>
+<div id="docutils-utilities-package" class="document"><h1 class="title"><tt class="docutils literal">
+<span class="pre">docutils.utilities</span></tt> package</h1>
+<p><a class="reference" href="index.html"><span>&lt;&lt; back to docutils index</span></a></p>
+<p>Common utilities used by several docutils components</p>
+<p>Exported symbols:</p>
+<div id="variables" class="section"><h2><a name="variables">Variables</a></h2>
+<a id="variable-2alanguage-2a" class="target" name="variable-2alanguage-2a"></a><div id="language" class="section"><h3><a name="language"><tt class="docutils literal">
+<span class="pre">*language*</span></tt></a></h3>
+<p>Default language for processing</p>
+<a id="variable-2alanguage-directory-2a" class="target" name="variable-2alanguage-directory-2a"></a></div>
+<div id="language-directory" class="section"><h3><a name="language-directory"><tt class="docutils literal">
+<span class="pre">*language-directory*</span></tt></a></h3>
+<p>Directory in which translation data is held. Each language has a file containing an a-list mapping  translated form to a cannonical form</p>
+<a id="variable-2anamespace-2a" class="target" name="variable-2anamespace-2a"></a></div>
+<div id="namespace" class="section"><h3><a name="namespace"><tt class="docutils literal">
+<span class="pre">*namespace*</span></tt></a></h3>
+<p>Prefix namespace for ids</p>
+<a id="variable-2bwsp-2b" class="target" name="variable-2bwsp-2b"></a></div>
+<div id="wsp" class="section"><h3><a name="wsp"><tt class="docutils literal">
+<span class="pre">+wsp+</span></tt></a></h3>
+<p>White space characters: Space, Tab, Return, Newline, Page, PageUp</p>
+</div>
+</div>
+<div id="functions" class="section"><h2><a name="functions">Functions</a></h2>
+<a id="function-latex-double-quote-replacement" class="target" name="function-latex-double-quote-replacement"></a><div id="latex-double-quote-replacement" class="section"><h3><a name="latex-double-quote-replacement"><tt class="docutils literal">
+<span class="pre">latex-double-quote-replacement</span></tt></a></h3>
+<a id="function-latex-quotes" class="target" name="function-latex-quotes"></a></div>
+<div id="latex-quotes" class="section"><h3><a name="latex-quotes"><tt class="docutils literal">
+<span class="pre">latex-quotes</span></tt></a></h3>
+<a id="function-babel" class="target" name="function-babel"></a></div>
+<div id="babel" class="section"><h3><a name="babel"><tt class="docutils literal">
+<span class="pre">babel</span></tt></a></h3>
+<a id="function-author-separators" class="target" name="function-author-separators"></a></div>
+<div id="author-separators" class="section"><h3><a name="author-separators"><tt class="docutils literal">
+<span class="pre">author-separators</span></tt></a></h3>
+<a id="function-translated-text" class="target" name="function-translated-text"></a></div>
+<div id="translated-text" class="section"><h3><a name="translated-text"><tt class="docutils literal">
+<span class="pre">translated-text</span></tt></a></h3>
+<a id="function-canonical-text" class="target" name="function-canonical-text"></a></div>
+<div id="canonical-text" class="section"><h3><a name="canonical-text"><tt class="docutils literal">
+<span class="pre">canonical-text</span></tt></a></h3>
+<a id="function-unwrite-char" class="target" name="function-unwrite-char"></a></div>
+<div id="unwrite-char" class="section"><h3><a name="unwrite-char"><tt class="docutils literal">
+<span class="pre">unwrite-char</span></tt></a></h3>
+<p>Removes last character from buffer and returns it if possible. If buffer was empty returns nil.</p>
+<a id="function-last-char" class="target" name="function-last-char"></a></div>
+<div id="last-char" class="section"><h3><a name="last-char"><tt class="docutils literal">
+<span class="pre">last-char</span></tt></a></h3>
+<p>Return last character written to the stream</p>
+<a id="function-find-file" class="target" name="function-find-file"></a></div>
+<div id="find-file" class="section"><h3><a name="find-file"><tt class="docutils literal">
+<span class="pre">find-file</span></tt></a></h3>
+<p>Return the first complete pathname for an existing file found by merging pathname with each item in a search path in turn. Returns nil if not found</p>
+<a id="function-copy-stream" class="target" name="function-copy-stream"></a></div>
+<div id="copy-stream" class="section"><h3><a name="copy-stream"><tt class="docutils literal">
+<span class="pre">copy-stream</span></tt></a></h3>
+<p>Copy from input stream FROM into output stream TO upto COUNT bytes, or until end-of-file if COUNT is NIL</p>
+<a id="function-is-suffix-p" class="target" name="function-is-suffix-p"></a></div>
+<div id="is-suffix-p" class="section"><h3><a name="is-suffix-p"><tt class="docutils literal">
+<span class="pre">is-suffix-p</span></tt></a></h3>
+<p>Return true if subseq is a suffix in seq</p>
+<a id="function-is-prefix-p" class="target" name="function-is-prefix-p"></a></div>
+<div id="is-prefix-p" class="section"><h3><a name="is-prefix-p"><tt class="docutils literal">
+<span class="pre">is-prefix-p</span></tt></a></h3>
+<p>Return true if subseq is a prefix in seq</p>
+<a id="function-convert-length-unit" class="target" name="function-convert-length-unit"></a></div>
+<div id="convert-length-unit" class="section"><h3><a name="convert-length-unit"><tt class="docutils literal">
+<span class="pre">convert-length-unit</span></tt></a></h3>
+<a id="function-length-unit" class="target" name="function-length-unit"></a></div>
+<div id="length-unit" class="section"><h3><a name="length-unit"><tt class="docutils literal">
+<span class="pre">length-unit</span></tt></a></h3>
+<a id="function-make-id" class="target" name="function-make-id"></a></div>
+<div id="make-id" class="section"><h3><a name="make-id"><tt class="docutils literal">
+<span class="pre">make-id</span></tt></a></h3>
+<p>Make an ID from string that meets requirements of CSS and html 4.01</p>
+<a id="function-normalise-name" class="target" name="function-normalise-name"></a></div>
+<div id="normalise-name" class="section"><h3><a name="normalise-name"><tt class="docutils literal">
+<span class="pre">normalise-name</span></tt></a></h3>
+<a id="function-whitespace-normalise-name" class="target" name="function-whitespace-normalise-name"></a></div>
+<div id="whitespace-normalise-name" class="section"><h3><a name="whitespace-normalise-name"><tt class="docutils literal">
+<span class="pre">whitespace-normalise-name</span></tt></a></h3>
+<p>Return and whitespace-normalized name.</p>
+<a id="function-make-name" class="target" name="function-make-name"></a></div>
+<div id="make-name" class="section"><h3><a name="make-name"><tt class="docutils literal">
+<span class="pre">make-name</span></tt></a></h3>
+<a id="function-indented-block" class="target" name="function-indented-block"></a></div>
+<div id="indented-block" class="section"><h3><a name="indented-block"><tt class="docutils literal">
+<span class="pre">indented-block</span></tt></a></h3>
+<p>Extract and return a vector of indented lines of text.</p>
+<p>Collect all lines with indentation, determine the minimum indentation, remove the minimum indentation from all indented lines unless STRIP-INDENT is false, and return them. All lines up to but not including the first unindented line will be returned in a new vector.</p>
+<p>Keyword arguments: START: The index of the first line to examine. UNTIL-BLANK: Stop collecting at the first blank line if true. STRIP-INDENT: Strip common leading indent if true (default). BLOCK-INDENT: The indent of the entire block, if known. FIRST-INDENT: The indent of the first line, if known.</p>
+<p>Returns values: a new vector of the indented lines with minimum indent removed the amount of the indent a boolean: did the indented block finish with a blank line or EOF?</p>
+<a id="function-split-lines" class="target" name="function-split-lines"></a></div>
+<div id="split-lines" class="section"><h3><a name="split-lines"><tt class="docutils literal">
+<span class="pre">split-lines</span></tt></a></h3>
+<p>Return a vector of lines split from string</p>
+<a id="function-unescape" class="target" name="function-unescape"></a></div>
+<div id="unescape" class="section"><h3><a name="unescape"><tt class="docutils literal">
+<span class="pre">unescape</span></tt></a></h3>
+<dl class="docutils"><dt>Return a string with nulls removed or restored to backslashes.</dt>
+<dd>Backslash-escaped spaces are also removed.</dd>
+</dl>
+<a id="function-escape2null" class="target" name="function-escape2null"></a></div>
+<div id="escape2null" class="section"><h3><a name="escape2null"><tt class="docutils literal">
+<span class="pre">escape2null</span></tt></a></h3>
+<p>Return a string with escape-backslashes converted to nulls.</p>
+<a id="function-lstrip" class="target" name="function-lstrip"></a></div>
+<div id="lstrip" class="section"><h3><a name="lstrip"><tt class="docutils literal">
+<span class="pre">lstrip</span></tt></a></h3>
+<a id="function-strip" class="target" name="function-strip"></a></div>
+<div id="strip" class="section"><h3><a name="strip"><tt class="docutils literal">
+<span class="pre">strip</span></tt></a></h3>
+<p>Remove prefixing and trailing white space from string</p>
+<a id="function-rstrip" class="target" name="function-rstrip"></a></div>
+<div id="rstrip" class="section"><h3><a name="rstrip"><tt class="docutils literal">
+<span class="pre">rstrip</span></tt></a></h3>
+<p>Remove trailing white space from string</p>
+<a id="function-indent-level" class="target" name="function-indent-level"></a></div>
+<div id="indent-level" class="section"><h3><a name="indent-level"><tt class="docutils literal">
+<span class="pre">indent-level</span></tt></a></h3>
+<p>Returns the indentation level of the line, including tabs as expanded</p>
+<a id="function-line-length" class="target" name="function-line-length"></a></div>
+<div id="line-length" class="section"><h3><a name="line-length"><tt class="docutils literal">
+<span class="pre">line-length</span></tt></a></h3>
+<p>Return length of line excluding trailing whitespace</p>
+<a id="function-line-blank-p" class="target" name="function-line-blank-p"></a></div>
+<div id="line-blank-p" class="section"><h3><a name="line-blank-p"><tt class="docutils literal">
+<span class="pre">line-blank-p</span></tt></a></h3>
+<a id="function-wsp-char-p" class="target" name="function-wsp-char-p"></a></div>
+<div id="wsp-char-p" class="section"><h3><a name="wsp-char-p"><tt class="docutils literal">
+<span class="pre">wsp-char-p</span></tt></a></h3>
+</div>
+</div>
+<div id="macros" class="section"><h2><a name="macros">Macros</a></h2>
+<a id="macro-with-block-indentation" class="target" name="macro-with-block-indentation"></a><div id="with-block-indentation" class="section"><h3><a name="with-block-indentation"><tt class="docutils literal">
+<span class="pre">with-block-indentation</span></tt></a></h3>
+<a id="macro-for" class="target" name="macro-for"></a></div>
+<div id="for" class="section"><h3><a name="for"><tt class="docutils literal">
+<span class="pre">for</span></tt></a></h3>
+<a id="macro-while" class="target" name="macro-while"></a></div>
+<div id="while" class="section"><h3><a name="while"><tt class="docutils literal">
+<span class="pre">while</span></tt></a></h3>
+<p>Repeat body while test returns true</p>
+<a id="macro-when-bind" class="target" name="macro-when-bind"></a></div>
+<div id="when-bind" class="section"><h3><a name="when-bind"><tt class="docutils literal">
+<span class="pre">when-bind</span></tt></a></h3>
+<p>Bind VAR to VALUE of expression, execute body if true</p>
+</div>
+</div>
+<div id="generic-functions" class="section"><h2><a name="generic-functions">Generic Functions</a></h2>
+<a id="generic-function-read-lines" class="target" name="generic-function-read-lines"></a><div id="read-lines" class="section"><h3><a name="read-lines"><tt class="docutils literal">
+<span class="pre">read-lines</span></tt></a></h3>
+<p>Read and return a vector of lines from an entity for subsequent parsing</p>
+<a id="generic-function-namespace" class="target" name="generic-function-namespace"></a></div>
+<div id="id1" class="section"><h3><a name="id1"><tt class="docutils literal">
+<span class="pre">namespace</span></tt></a></h3>
+</div>
+</div>
+<div id="classes" class="section"><h2><a name="classes">Classes</a></h2>
+<a id="class-line-wrap-stream" class="target" name="class-line-wrap-stream"></a><div id="line-wrap-stream" class="section"><h3><a name="line-wrap-stream"><tt class="docutils literal">
+<span class="pre">line-wrap-stream</span></tt></a></h3>
+<p>A simple line-wrapping stream filter</p>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Mon, 25 Jan 2021 10:54:48 .
+</div>
+</div>
+</body>
+</html>

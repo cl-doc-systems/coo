@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>docutils.parser.tables
+
+ package</title>
+</head>
+<body>
+<div id="docutils-parser-tables-package" class="document"><h1 class="title"><tt class="docutils literal">
+<span class="pre">docutils.parser.tables</span></tt> package</h1>
+<p><a class="reference" href="index.html"><span>&lt;&lt; back to docutils index</span></a></p>
+<p>CALS Table parser</p>
+<p>Exported symbols:</p>
+<div id="functions" class="section"><h2><a name="functions">Functions</a></h2>
+<a id="function-parse-table" class="target" name="function-parse-table"></a><div id="parse-table" class="section"><h3><a name="parse-table"><tt class="docutils literal">
+<span class="pre">parse-table</span></tt></a></h3>
+</div>
+</div>
+<div id="classes" class="section"><h2><a name="classes">Classes</a></h2>
+<a id="class-grid-table-parser" class="target" name="class-grid-table-parser"></a><div id="grid-table-parser" class="section"><h3><a name="grid-table-parser"><tt class="docutils literal">
+<span class="pre">grid-table-parser</span></tt></a></h3>
+<p>Parse a grid table using <cite><span>parse()</span></cite>.</p>
+<blockquote> <p>Here's an example of a grid table:</p>
+<pre class="literal-block">
++------------------------+------------+----------+----------+
+| Header row, column 1   | Header 2   | Header 3 | Header 4 |
++========================+============+==========+==========+
+| body row 1, column 1   | column 2   | column 3 | column 4 |
++------------------------+------------+----------+----------+
+| body row 2             | Cells may span columns.          |
++------------------------+------------+---------------------+
+| body row 3             | Cells may  | - Table cells       |
++------------------------+ span rows. | - contain           |
+| body row 4             |            | - body elements.    |
++------------------------+------------+---------------------+
+</pre><p>Intersections use '+', row separators use '-' (except for one optional head/body row separator, which uses '='), and column separators use '|'.</p>
+<p>Passing the above table to the <cite><span>parse()</span></cite> method will result in the following data structure:</p>
+<pre class="literal-block">
+
+([24, 12, 10, 10],
+ [[(0, 0, 1, ['Header row, column 1']),
+   (0, 0, 1, ['Header 2']),
+   (0, 0, 1, ['Header 3']),
+   (0, 0, 1, ['Header 4'])]],
+ [[(0, 0, 3, ['body row 1, column 1']),
+   (0, 0, 3, ['column 2']),
+   (0, 0, 3, ['column 3']),
+   (0, 0, 3, ['column 4'])],
+  [(0, 0, 5, ['body row 2']),
+   (0, 2, 5, ['Cells may span columns.']),
+   None,
+   None],
+  [(0, 0, 7, ['body row 3']),
+   (1, 0, 7, ['Cells may', 'span rows.', '']),
+   (1, 1, 7, ['- Table cells', '- contain', '- body elements.']),
+   None],
+  [(0, 0, 9, ['body row 4']), None, None, None]])
+
+</pre><p>The first item is a list containing column widths (colspecs). The second item is a list of head rows, and the third is a list of body rows. Each row contains a list of cells. Each cell is either None (for a cell unused because of another cell's span), or a tuple. A cell tuple contains four items: the number of extra rows used by the cell in a vertical span (morerows); the number of extra columns used by the cell in a horizontal span (morecols); the line offset of the first line of the cell contents; and the cell contents, a list of lines of text.</p>
+</blockquote> <a id="condition-table-condition" class="target" name="condition-table-condition"></a></div>
+<div id="table-condition" class="section"><h3><a name="table-condition"><tt class="docutils literal">
+<span class="pre">table-condition</span></tt></a></h3>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Mon, 25 Jan 2021 10:54:48 .
+</div>
+</div>
+</body>
+</html>

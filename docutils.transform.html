@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>docutils.transform
+
+ package</title>
+</head>
+<body>
+<div id="docutils-transform-package" class="document"><h1 class="title"><tt class="docutils literal">
+<span class="pre">docutils.transform</span></tt> package</h1>
+<p><a class="reference" href="index.html"><span>&lt;&lt; back to docutils index</span></a></p>
+<p>Package containing standard docutils Node names</p>
+<p>Exported symbols:</p>
+<div id="functions" class="section"><h2><a name="functions">Functions</a></h2>
+<a id="function-footnotes" class="target" name="function-footnotes"></a><div id="footnotes" class="section"><h3><a name="footnotes"><tt class="docutils literal">
+<span class="pre">footnotes</span></tt></a></h3>
+<a id="function-external-targets" class="target" name="function-external-targets"></a></div>
+<div id="external-targets" class="section"><h3><a name="external-targets"><tt class="docutils literal">
+<span class="pre">external-targets</span></tt></a></h3>
+<a id="function-internal-targets" class="target" name="function-internal-targets"></a></div>
+<div id="internal-targets" class="section"><h3><a name="internal-targets"><tt class="docutils literal">
+<span class="pre">internal-targets</span></tt></a></h3>
+</div>
+</div>
+<div id="classes" class="section"><h2><a name="classes">Classes</a></h2>
+<a id="class-fignum" class="target" name="class-fignum"></a><div id="fignum" class="section"><h3><a name="fignum"><tt class="docutils literal">
+<span class="pre">fignum</span></tt></a></h3>
+<p>Automatically assigns numbers to Figures, tables and equations.</p>
+<a id="class-sectnum" class="target" name="class-sectnum"></a></div>
+<div id="sectnum" class="section"><h3><a name="sectnum"><tt class="docutils literal">
+<span class="pre">sectnum</span></tt></a></h3>
+<p>Automatically assigns numbers to the titles of document sections.</p>
+<a id="class-contents" class="target" name="class-contents"></a></div>
+<div id="contents" class="section"><h3><a name="contents"><tt class="docutils literal">
+<span class="pre">contents</span></tt></a></h3>
+<p>Include or exclude elements - for use with pending elements</p>
+<a id="class-evaluate-transform" class="target" name="class-evaluate-transform"></a></div>
+<div id="evaluate-transform" class="section"><h3><a name="evaluate-transform"><tt class="docutils literal">
+<span class="pre">evaluate-transform</span></tt></a></h3>
+<p>Evaluate nodes cahcing result</p>
+<a id="class-simple-transform" class="target" name="class-simple-transform"></a></div>
+<div id="simple-transform" class="section"><h3><a name="simple-transform"><tt class="docutils literal">
+<span class="pre">simple-transform</span></tt></a></h3>
+<p>A simple transform which calls the closure with the node</p>
+<a id="class-class-attribute" class="target" name="class-class-attribute"></a></div>
+<div id="class-attribute" class="section"><h3><a name="class-attribute"><tt class="docutils literal">
+<span class="pre">class-attribute</span></tt></a></h3>
+<p>Move class attribute of pending node to next non-comment element</p>
+<a id="class-docinfo" class="target" name="class-docinfo"></a></div>
+<div id="docinfo" class="section"><h3><a name="docinfo"><tt class="docutils literal">
+<span class="pre">docinfo</span></tt></a></h3>
+<p>Transform to create document bibliographic fields.</p>
+<a id="class-doctitle" class="target" name="class-doctitle"></a></div>
+<div id="doctitle" class="section"><h3><a name="doctitle"><tt class="docutils literal">
+<span class="pre">doctitle</span></tt></a></h3>
+<p>Transform to promote document title and subtitle.</p>
+<a id="class-resolve-media" class="target" name="class-resolve-media"></a></div>
+<div id="resolve-media" class="section"><h3><a name="resolve-media"><tt class="docutils literal">
+<span class="pre">resolve-media</span></tt></a></h3>
+<p>Resolve media dependancies</p>
+<a id="class-substitutions" class="target" name="class-substitutions"></a></div>
+<div id="substitutions" class="section"><h3><a name="substitutions"><tt class="docutils literal">
+<span class="pre">substitutions</span></tt></a></h3>
+<dl class="docutils"><dt>Replace substitution-references with  the</dt>
+<dd>contents of the corresponding substitution-definitions.</dd>
+</dl>
+<a id="class-footnotes" class="target" name="class-footnotes"></a></div>
+<div id="id1" class="section"><h3><a name="id1"><tt class="docutils literal">
+<span class="pre">footnotes</span></tt></a></h3>
+<p>Assign numbers to autonumbered footnotes, and resolve links to footnotes, citations, and their references.</p>
+<a id="class-internal-targets" class="target" name="class-internal-targets"></a></div>
+<div id="id2" class="section"><h3><a name="id2"><tt class="docutils literal">
+<span class="pre">internal-targets</span></tt></a></h3>
+<p>replace :refname attribute with the direct :refid attribute for internal targets.</p>
+<a id="class-external-targets" class="target" name="class-external-targets"></a></div>
+<div id="id3" class="section"><h3><a name="id3"><tt class="docutils literal">
+<span class="pre">external-targets</span></tt></a></h3>
+<p>replace :refname attribute with the direct :refuri attribute for external targets.</p>
+<a id="class-indirect-hyperlinks" class="target" name="class-indirect-hyperlinks"></a></div>
+<div id="indirect-hyperlinks" class="section"><h3><a name="indirect-hyperlinks"><tt class="docutils literal">
+<span class="pre">indirect-hyperlinks</span></tt></a></h3>
+<p>process internal and external indirect hyperlinks</p>
+<a id="class-anonymous-hyperlinks" class="target" name="class-anonymous-hyperlinks"></a></div>
+<div id="anonymous-hyperlinks" class="section"><h3><a name="anonymous-hyperlinks"><tt class="docutils literal">
+<span class="pre">anonymous-hyperlinks</span></tt></a></h3>
+<p>Link anonymous references to targets</p>
+<a id="class-chained-targets" class="target" name="class-chained-targets"></a></div>
+<div id="chained-targets" class="section"><h3><a name="chained-targets"><tt class="docutils literal">
+<span class="pre">chained-targets</span></tt></a></h3>
+<dl class="docutils"><dt>Attributes "refuri" and "refname" are migrated from the final direct</dt>
+<dd>target up the chain of contiguous adjacent internal targets</dd>
+</dl>
+<a id="class-target-notes" class="target" name="class-target-notes"></a></div>
+<div id="target-notes" class="section"><h3><a name="target-notes"><tt class="docutils literal">
+<span class="pre">target-notes</span></tt></a></h3>
+<dl class="docutils"><dt>Creates a footnote for each external target in the text, and corresponding</dt>
+<dd>footnote references after each reference.</dd>
+</dl>
+<a id="class-final-checks" class="target" name="class-final-checks"></a></div>
+<div id="final-checks" class="section"><h3><a name="final-checks"><tt class="docutils literal">
+<span class="pre">final-checks</span></tt></a></h3>
+<p>Perform last-minute checks and transforms.</p>
+<blockquote> <ul>
+<li><p class="first last">Check for dangling references (incl. footnote &amp; citation).</p>
+</li>
+<li><p class="first last">Check for illegal transitions, move transitions</p>
+</li>
+</ul>
+</blockquote> <a id="class-filter-messages" class="target" name="class-filter-messages"></a></div>
+<div id="filter-messages" class="section"><h3><a name="filter-messages"><tt class="docutils literal">
+<span class="pre">filter-messages</span></tt></a></h3>
+<p>Remove system messages below verbosity threshold.</p>
+<a id="class-decorations" class="target" name="class-decorations"></a></div>
+<div id="decorations" class="section"><h3><a name="decorations"><tt class="docutils literal">
+<span class="pre">decorations</span></tt></a></h3>
+<p>Populate a document's decoration element (header, footer).</p>
+<a id="class-filter" class="target" name="class-filter"></a></div>
+<div id="filter" class="section"><h3><a name="filter"><tt class="docutils literal">
+<span class="pre">filter</span></tt></a></h3>
+<p>Include or exclude elements - for use with pending elements</p>
+</div>
+</div>
+<hr class ="docutils footer" /><div class="footer">Generated on : Mon, 25 Jan 2021 10:54:48 .
+</div>
+</div>
+</body>
+</html>
